@@ -1,0 +1,32 @@
+#iniciando as variaveis
+qthomens = qtmulheres = qtmaioridade = qtiterações = 0
+sexo = opção = ' '
+
+while True:#condição verdadeira para entrada no laço
+
+    opção = str(input('\n\nIniciado o processo para cadastro, deseja continuar ? [S/N]')).upper().strip()[0]#vamospegar a primeira letra digitada pelo usuario
+    if opção in 'Ss':
+        print(f'\n\tCadastro de pessoas  -{qtiterações}-')
+        qtiterações += 1
+        print("="*29)
+        idade = int(input('Informe a idade: '))
+        sexo = str(input('Informe o sexo [M/F]: ')).upper().strip()[0]#vamospegar a primeira letra digitada pelo usuario
+        print("="*29)
+
+    else:#se o valor contido na variavel opção for  diferente de S cai aqui no break
+        break   
+
+    if idade >= 18:
+        qtmaioridade += 1    
+
+    if sexo in 'Mm':
+        qthomens += 1
+
+    if sexo in 'Ff' and idade >= 18:
+        qtmulheres += 1     
+
+print('Saindo do cadastro...\n')   
+#apos sair do laço temos alguns levantamentos das informações
+print(f'Quantidade de pessoas cadastradas com mais de 18 anos {qtmaioridade}')
+print(f'Quantidade de mulheres maior de 18 anos {qtmulheres}')
+print(f'Quantidade de homens cadastrados {qthomens}')
